@@ -1,0 +1,24 @@
+{
+	"name": "Soundcloud Hide",
+	"manifest_version": 2,
+	"version":"1.0",
+	"description": "Hide songs in your Soundcloud Stream",
+	"content_scripts": 
+	[{
+		"matches": ["*://soundcloud.com/stream*"],
+		"js": ["jquery.js","schide.js"],
+		"run_at": "document_start"
+	}],
+	"background": {
+	    "scripts": ["requests.js"],
+	    "persistent": true
+  	},
+	"permissions": 
+	[
+		"webRequest",
+		"webRequestBlocking",
+        "webNavigation",
+        "storage",
+		"<all_urls>"
+    ]
+}
